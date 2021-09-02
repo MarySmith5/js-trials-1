@@ -32,3 +32,25 @@ function arrayDiff(array1, array2) {
 
 const ad = arrayDiff([1, 2, 2, 2, 3, 3], [2, 2])
 console.log(ad)
+
+
+function maximumAdjacentProduct(arr1) {
+    const products = []
+    let max = 0
+    for (let i = 0; i < arr1.length; i += 1) {
+        if (typeof(arr1[i]) === "number" && typeof(arr1[i+1]) === "number") {
+            products.push(arr1[i] * arr1[i + 1]);
+        }    
+    }
+    for (const num of products) {
+        if (num > max){
+            max = num;
+        }
+    }
+    return max;
+
+
+}
+
+const map = maximumAdjacentProduct([3, 'a', 20, -5, 'p', 3, 7])
+console.log(map)
